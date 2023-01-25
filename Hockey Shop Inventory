@@ -1,0 +1,33 @@
+
+--Creates a database for a hockey equipment store
+CREATE TABLE items (id INTEGER, type TEXT, dollars INTEGER, brand TEXT, stock INTEGER);
+
+
+--15 items, type of equipment, price, brand, and how many are in stock
+INSERT INTO items VALUES(1, 'Gloves', 50, 'CCM', 5);
+INSERT INTO items VALUES(2, 'Gloves', 40, 'Bauer', 3);
+INSERT INTO items VALUES(3, 'Gloves', 45,
+'Eagle', 1);
+INSERT INTO items VALUES(4, 'Stick', 100, 'CCM', 8);
+INSERT INTO items VALUES(5, 'Stick', 120, 'Bauer', 10);
+INSERT INTO items VALUES(6, 'Stick', 200, 'Warrior', 0);
+INSERT INTO items VALUES(7, 'Skates', 300, 'CCM', 3);
+INSERT INTO items VALUES(8, 'Skates', 250, 'Bauer', 4);
+INSERT INTO items VALUES(9, 'Skates', 400, 'True', 1);
+INSERT INTO items VALUES(10, 'Helmet', 100, 'CCM', 8);
+INSERT INTO items VALUES(11, 'Helmet', 80, 'Bauer', 3);
+INSERT INTO items VALUES(12, 'Helmet', 50, 'JOFA', 0);
+INSERT INTO items VALUES(13, 'Goalie Pads', 1000, 'CCM', 1);
+INSERT INTO items VALUES(14, 'Goalie Pads', 1100, 'True', 2);
+INSERT INTO items VALUES(15, 'Goalie Pads', 1500, "Brian's", 0);
+
+
+--All items ordered by price from highest to lowest
+SELECT * FROM items ORDER BY dollars DESC;
+
+--All items that are out of stock
+SELECT * FROM items AS out_of_stock WHERE stock = 0;
+
+--All items from a particular brand
+SELECT * FROM items WHERE brand = 'Bauer';
+
