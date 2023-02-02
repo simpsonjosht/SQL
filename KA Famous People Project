@@ -1,0 +1,53 @@
+/* Create table about the people and what they do here */
+/* creates list of hockey players and the ID to their current team */
+CREATE TABLE players (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, current_team_id INTEGER);
+
+INSERT INTO players (name, current_team_id) VALUES ("Derek Grant", 1);
+INSERT INTO players (name, current_team_id) VALUES ("Nick Ritchie", 2);
+INSERT INTO players (name, current_team_id) VALUES ("Taylor Hall", 3);
+INSERT INTO players (name, current_team_id) VALUES ("Jeff Skinner", 4);
+INSERT INTO players (name, current_team_id) VALUES ("Nazem Kadri", 5);
+
+/* creates table listing all the NHL teams and assigns an ID */
+CREATE TABLE teams (id INTEGER PRIMARY KEY AUTOINCREMENT, team_name TEXT);
+
+INSERT INTO teams (team_name) VALUES ("ANA");
+INSERT INTO teams (team_name) VALUES ("ARI");
+INSERT INTO teams (team_name) VALUES ("BOS");
+INSERT INTO teams (team_name) VALUES ("BUF");
+INSERT INTO teams (team_name) VALUES ("CAL");
+INSERT INTO teams (team_name) VALUES ("CAR");
+INSERT INTO teams (team_name) VALUES ("CHI");
+INSERT INTO teams (team_name) VALUES ("COL");
+INSERT INTO teams (team_name) VALUES ("CBJ");
+INSERT INTO teams (team_name) VALUES ("DAL");
+INSERT INTO teams (team_name) VALUES ("DET");
+INSERT INTO teams (team_name) VALUES ("EDM");
+INSERT INTO teams (team_name) VALUES ("FLO");
+INSERT INTO teams (team_name) VALUES ("LAK");
+INSERT INTO teams (team_name) VALUES ("MIN");
+INSERT INTO teams (team_name) VALUES ("MTL");
+INSERT INTO teams (team_name) VALUES ("NSH");
+INSERT INTO teams (team_name) VALUES ("NJD");
+INSERT INTO teams (team_name) VALUES ("NYI");
+INSERT INTO teams (team_name) VALUES ("NYR");
+INSERT INTO teams (team_name) VALUES ("OTT");
+INSERT INTO teams (team_name) VALUES ("PHI");
+INSERT INTO teams (team_name) VALUES ("PIT");
+INSERT INTO teams (team_name) VALUES ("SJS");
+INSERT INTO teams (team_name) VALUES ("SEA");
+INSERT INTO teams (team_name) VALUES ("STL");
+INSERT INTO teams (team_name) VALUES ("TBL");
+INSERT INTO teams (team_name) VALUES ("TOR");
+INSERT INTO teams (team_name) VALUES ("VAN");
+INSERT INTO teams (team_name) VALUES ("VGK");
+INSERT INTO teams (team_name) VALUES ("WSH");
+INSERT INTO teams (team_name) VALUES ("WPG");
+
+
+/* lists players and their current team name */
+SELECT players.name, teams.team_name FROM players
+JOIN teams
+ON players.current_team_id = teams.id;
+
+
